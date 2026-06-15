@@ -1,0 +1,162 @@
+:root {
+            --verde-oscuro: #1B5E20;
+            --verde-claro: #A5D6A7;
+            --verde-muy-claro: #C8E6C9;
+            --verde-pastel: #E8F5E9;
+        }
+        
+        body {
+            background-color: var(--verde-pastel);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, #2E7D32 100%);
+            box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, #2E7D32 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .card {
+            border: none;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 25px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(27, 94, 32, 0.2);
+        }
+        
+        .card-header {
+            background-color: var(--verde-claro);
+            border: none;
+            border-radius: 15px 15px 0 0;
+            padding: 20px;
+        }
+        
+        .card-header h5 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-body p, .card-body li {
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .badge-verde {
+            background-color: var(--verde-claro);
+            color: var(--verde-oscuro);
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+        
+        .btn-verde {
+            background-color: var(--verde-oscuro);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .btn-verde:hover {
+            background-color: #2E7D32;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--verde-claro);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 15px;
+        }
+        
+        .referencias-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--verde-oscuro);
+        }
+        
+        .referencias-section a {
+            color: var(--verde-oscuro);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .referencias-section a:hover {
+            color: #2E7D32;
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: var(--verde-oscuro);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .librerias-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .libreria-badge {
+            background-color: var(--verde-muy-claro);
+            color: var(--verde-oscuro);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 2px solid var(--verde-claro);
+        }

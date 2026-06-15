@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos - Guía Completa sobre Cambio Climático</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --verde-oscuro: #1B5E20;
+            --verde-claro: #A5D6A7;
+            --verde-muy-claro: #C8E6C9;
+            --verde-pastel: #E8F5E9;
+        }
+        
+        body {
+            background-color: var(--verde-pastel);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, #2E7D32 100%);
+            box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, #2E7D32 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .card {
+            border: none;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 25px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(27, 94, 32, 0.2);
+        }
+        
+        .card-header {
+            background-color: var(--verde-claro);
+            border: none;
+            border-radius: 15px 15px 0 0;
+            padding: 20px;
+        }
+        
+        .card-header h5 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-body p, .card-body li {
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .section-title {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--verde-claro);
+        }
+        
+        .section-subtitle {
+            color: var(--verde-oscuro);
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .icon-box {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--verde-muy-claro);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 2px solid var(--verde-claro);
+        }
+        
+        .icon-box i {
+            font-size: 2.5rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 15px;
+        }
+        
+        .icon-box h5 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+        }
+        
+        .btn-verde {
+            background-color: var(--verde-oscuro);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .btn-verde:hover {
+            background-color: #2E7D32;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, var(--verde-claro) 0%, var(--verde-muy-claro) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--verde-oscuro);
+        }
+        
+        .stat-box h3 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box p {
+            color: #333;
+            margin: 0;
+        }
+        
+        .organizacion-card {
+            background-color: white;
+            border: 2px solid var(--verde-claro);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .organizacion-card:hover {
+            border-color: var(--verde-oscuro);
+            box-shadow: 0 8px 20px rgba(27, 94, 32, 0.2);
+        }
+        
+        .organizacion-card h6 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .organizacion-card a {
+            color: var(--verde-oscuro);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .organizacion-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .solucion-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--verde-oscuro);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(27, 94, 32, 0.1);
+        }
+        
+        .solucion-item h5 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            padding-left: 40px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--verde-oscuro);
+            border-radius: 50%;
+            top: 0;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            width: 2px;
+            height: 100%;
+            background-color: var(--verde-claro);
+            top: 20px;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        footer {
+            background-color: var(--verde-oscuro);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px 15px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-leaf"></i> Leafy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#que-es">¿Qué es?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#causas">Causas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#organizaciones">Organizaciones</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1><i class="bi bi-globe2"></i> Guía Completa sobre Cambio Climático</h1>
+            <p class="lead">Información confiable, recursos viables y soluciones para tomar acción</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        
+        <!-- 1. ¿Qué es el Cambio Climático? -->
+        <section id="que-es">
+            <h2 class="section-title"><i class="bi bi-thermometer"></i> ¿Qué es el Cambio Climático?</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5>Definición y Conceptos Básicos</h5>
+                </div>
+                <div class="card-body">
+                    <p>El <strong>cambio climático</strong> se refiere a cambios a largo plazo en las temperaturas y patrones climáticos globales. Aunque los cambios climáticos son naturales, la evidencia científica es contundente: las actividades humanas desde la Revolución Industrial han sido el motor principal del cambio climático, principalmente por la emisión de gases de efecto invernadero.</p>
+                    
+                    <hr>
+                    
+                    <h5 class="section-subtitle"><i class="bi bi-cloud"></i> Factores Clave</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-fire"></i>
+                                <h5>Gases de Efecto Invernadero</h5>
+                                <p>CO₂, metano, óxido nitroso y otros gases atrapan calor en la atmósfera.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-thermometer-high"></i>
+                                <h5>Calentamiento Global</h5>
+                                <p>Aumento de la temperatura promedio del planeta en ~1.1°C desde 1850.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-water"></i>
+                                <h5>Niveles del Mar</h5>
+                                <p>Aumento de ~21 cm desde 1880 por deshielo y expansión térmica.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-wind"></i>
+                                <h5>Fenómenos Extremos</h5>
+                                <p>Tormentas más intensas, sequías y eventos climáticos extremos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Causas y Lo Que Está Ocurriendo Ahora -->
+        <section id="causas">
+            <h2 class="section-title"><i class="bi bi-exclamation-circle"></i> Causas y Estado Actual</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5>¿Qué lo Causa? Principales Fuentes de Emisiones</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="stat-box">
+                                <i class="bi bi-fuel-pump" style="font-size: 2rem; color: var(--verde-oscuro);"></i>
+                                <h3>27%</h3>
+                                <p><strong>Energía</strong> - Electricidad, calefacción y transporte</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="stat-box">
+                                <i class="bi bi-building" style="font-size: 2rem; color: var(--verde-oscuro);"></i>
+                                <h3>31%</h3>
+                                <p><strong>Industria y Agricultura</strong> - Producción de alimentos y materias primas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="stat-box">
+                                <i class="bi bi-car-front" style="font-size: 2rem; color: var(--verde-oscuro);"></i>
+                                <h3>14%</h3>
+                                <p><strong>Transporte</strong> - Vehículos, aviación y barcos</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="stat-box">
+                                <i class="bi bi-house" style="font-size: 2rem; color: var(--verde-oscuro);"></i>
+                                <h3>6%</h3>
+                                <p><strong>Uso Residencial</strong> - Calefacción, refrigeración y electricidad doméstica</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="stat-box">
+                                <i class="bi bi-tree" style="font-size: 2rem; color: var(--verde-oscuro);"></i>
+                                <h3>10%</h3>
+                                <p><strong>Deforestación</strong> - Pérdida de sumideros de carbono</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="stat-box">
+                                <i class="bi bi-trash" style="font-size: 2rem; color: var(--verde-oscuro);"></i>
+                                <h3>3%</h3>
+                                <p><strong>Residuos</strong> - Descomposición de desechos en vertederos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>¿Qué Está Ocurriendo Ahora Mismo?</h5>
+                </div>
+                <div class="card-body">
+                    <p class="lead"><strong>Impactos Presentes:</strong></p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div>
+                                <h5>🌡️ Olas de Calor Récord</h5>
+                                <p>2024 fue el año más cálido jamás registrado. Las olas de calor son más frecuentes, duraderas e intensas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div>
+                                <h5>💧 Deshielo Acelerado</h5>
+                                <p>Los polos se están derritiendo 4 veces más rápido que hace 25 años, amenazando millones de vidas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div>
+                                <h5>🌊 Aumento del Nivel del Mar</h5>
+                                <p>Ciudades costeras enfrentan inundaciones cada vez más frecuentes. Islas enteras podrían desaparecer.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div>
+                                <h5>🌪️ Fenómenos Climáticos Extremos</h5>
+                                <p>Huracanes más intensos, sequías prolongadas, inundaciones devastadoras y tormentas sin precedentes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div>
+                                <h5>🌾 Crisis de Seguridad Alimentaria</h5>
+                                <p>Cosechas comprometidas, erosión de suelos y cambios en los patrones de lluvia amenazan la producción de alimentos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div>
+                                <h5>🦋 Pérdida de Biodiversidad</h5>
+                                <p>Especies desaparecen 1,000 veces más rápido que la tasa natural. Ecosistemas colapsando.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div>
+                                <h5>🏥 Crisis de Salud Pública</h5>
+                                <p>Aumento de enfermedades respiratorias, desnutrición, enfermedades infecciosas y problemas de salud mental.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Soluciones -->
+        <section id="soluciones">
+            <h2 class="section-title"><i class="bi bi-lightbulb"></i> ¿Cómo Podemos Solucionarlo?</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5>Soluciones a Nivel Global</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="section-subtitle"><i class="bi bi-lightning-charge"></i> Energía Renovable</h5>
+                    <div class="solucion-item">
+                        <h5>Transición a Energías Limpias</h5>
+                        <p>Solar, eólica, hidroeléctrica, geotérmica y nuclear moderna pueden reemplazar los combustibles fósiles. La tecnología ya existe; necesitamos voluntad política y inversión.</p>
+                    </div>
+
+                    <h5 class="section-subtitle"><i class="bi bi-tree"></i> Protección de Ecosistemas</h5>
+                    <div class="solucion-item">
+                        <h5>Reforestación y Conservación</h5>
+                        <p>Proteger y restaurar bosques. Los bosques absorben CO₂ y albergan biodiversidad. Un árbol puede absorber ~21 kg de CO₂ en su vida.</p>
+                    </div>
+
+                    <h5 class="section-subtitle"><i class="bi bi-factory"></i> Industria Sostenible</h5>
+                    <div class="solucion-item">
+                        <h5>Economía Circular</h5>
+                        <p>Reducir residuos, reutilizar y reciclar. Cambiar de economía lineal (producir-usar-descartar) a circular (reutilizar indefinidamente).</p>
+                    </div>
+
+                    <h5 class="section-subtitle"><i class="bi bi-car-front"></i> Transporte Limpio</h5>
+                    <div class="solucion-item">
+                        <h5>Vehículos Eléctricos y Transporte Público</h5>
+                        <p>Electrificar el transporte, promover transporte público y ciclovías. Reducir la dependencia de combustibles fósiles.</p>
+                    </div>
+
+                    <h5 class="section-subtitle"><i class="bi bi-house"></i> Hogares Sostenibles</h5>
+                    <div class="solucion-item">
+                        <h5>Eficiencia Energética</h5>
+                        <p>Aislar viviendas, usar electrodomésticos eficientes, instalar paneles solares, reducir consumo de agua y energía.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Acciones Individuales que Marcan Diferencia</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><strong>🚴 Reducir emisiones:</strong> Camina, usa bicicleta o transporte público</li>
+                                <li class="mb-3"><strong>🍃 Dieta sostenible:</strong> Reduce carne, come más plantas locales</li>
+                                <li class="mb-3"><strong>💡 Ahorra energía:</strong> Apaga luces, usa eficiencia energética</li>
+                                <li class="mb-3"><strong>🗑️ Recicla:</strong> Separa residuos y reduce plástico</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><strong>🌱 Planta árboles:</strong> Cada árbol cuenta en la lucha contra el carbono</li>
+                                <li class="mb-3"><strong>🔊 Conciencia:</strong> Educa a otros sobre el cambio climático</li>
+                                <li class="mb-3"><strong>🗳️ Vota:</strong> Apoya políticos y políticas climáticas</li>
+                                <li class="mb-3"><strong>💰 Invierte:</strong> Apoya empresas sostenibles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Organizaciones y Recursos -->
+        <section id="organizaciones">
+            <h2 class="section-title"><i class="bi bi-people"></i> Organizaciones Confiables y Recursos</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5>Organizaciones de Nivel Mundial</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="organizacion-card">
+                                <h6><i class="bi bi-globe"></i> ONU (Naciones Unidas)</h6>
+                                <p>Coordina la acción climática mundial a través del UNFCCC y establece objetivos globales.</p>
+                                <a href="https://www.un.org/es/climatechange" target="_blank"><i class="bi bi-link-45deg"></i> Visitar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="organizacion-card">
+                                <h6><i class="bi bi-cloud-rain"></i> OMM</h6>
+                                <p>Organización Meteorológica Mundial. Proporciona datos climáticos científicos confiables.</p>
+                                <a href="https://wmo.int/es/climate" target="_blank"><i class="bi bi-link-45deg"></i> Visitar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="organizacion-card">
+                                <h6><i class="bi bi-book"></i> IPCC</h6>
+                                <p>Panel Intergubernamental sobre Cambio Climático. Evaluaciones científicas de autoridad mundial.</p>
+                                <a href="https://www.ipcc.ch/" target="_blank"><i class="bi bi-link-45deg"></i> Visitar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="organizacion-card">
+                                <h6><i class="bi bi-tree"></i> Team Trees</h6>
+                                <p>Iniciativa global para plantar 20 mil millones de árboles antes de 2050.</p>
+                                <a href="https://www.teamtrees.org/" target="_blank"><i class="bi bi-link-45deg"></i> Visitar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="organizacion-card">
+                                <h6><i class="bi bi-water"></i> Team Water</h6>
+                                <p>Proteger y restaurar ecosistemas acuáticos y recursos hídricos globales.</p>
+                                <a href="https://teamwater.org/" target="_blank"><i class="bi bi-link-45deg"></i> Visitar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="organizacion-card">
+                                <h6><i class="bi bi-hammer"></i> CATF</h6>
+                                <p>The Climate Action Through Food. Acción climática a través de sistemas alimentarios sostenibles.</p>
+                                <a href="https://www.climatechangefoods.org/" target="_blank"><i class="bi bi-link-45deg"></i> Visitar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Recursos de Información Confiables</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="section-subtitle"><i class="bi bi-search"></i> Datos y Investigación</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://www.climate.gov/" target="_blank" class="text-decoration-none"><strong>Climate.gov</strong></a> - Datos, noticias y recursos educativos</li>
+                                <li class="mb-2"><a href="https://www.nature.com/subjects/climate-change" target="_blank" class="text-decoration-none"><strong>Nature</strong></a> - Artículos científicos y revisión por pares</li>
+                                <li class="mb-2"><a href="https://www.ipcc.ch/reports/" target="_blank" class="text-decoration-none"><strong>IPCC Reports</strong></a> - Evaluaciones científicas completas</li>
+                                <li class="mb-2"><a href="https://www.nasa.gov/climate/" target="_blank" class="text-decoration-none"><strong>NASA Climate</strong></a> - Datos de satélites y observaciones</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="section-subtitle"><i class="bi bi-book"></i> Educación y Acción</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://www.greenpeace.org/" target="_blank" class="text-decoration-none"><strong>Greenpeace</strong></a> - Campañas y conciencia ambiental</li>
+                                <li class="mb-2"><a href="https://www.worldwildlife.org/" target="_blank" class="text-decoration-none"><strong>WWF</strong></a> - Conservación de la vida silvestre</li>
+                                <li class="mb-2"><a href="https://www.carbonfootprint.com/" target="_blank" class="text-decoration-none"><strong>Carbon Footprint</strong></a> - Calcula tu huella de carbono</li>
+                                <li class="mb-2"><a href="https://unfccc.int/" target="_blank" class="text-decoration-none"><strong>UNFCCC</strong></a> - Convención Marco de la ONU</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Contribuciones a Fundaciones -->
+        <section id="contribuciones">
+            <h2 class="section-title"><i class="bi bi-heart-fill"></i> Aportaciones a Fundaciones</h2>
+            
+            <div class="card">
+                <div class="card-body">
+                    <p class="lead">Tu contribución, sin importar su tamaño, ayuda a financiar:</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-tree"></i>
+                                <h5>Reforestación</h5>
+                                <p>Plantar árboles en áreas deforestadas para restaurar ecosistemas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-water"></i>
+                                <h5>Conservación Hídrica</h5>
+                                <p>Proteger fuentes de agua y restaurar humedales.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-lightbulb"></i>
+                                <h5>Energía Limpia</h5>
+                                <p>Proyectos de energía solar y eólica en comunidades vulnerables.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="bi bi-people"></i>
+                                <h5>Educación Ambiental</h5>
+                                <p>Programas educativos para conciencia climática en escuelas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <div class="alert alert-info" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Cada aportación cuenta:</strong> $5 pueden plantar 1 árbol, $10 pueden proporcionar educación ambiental, $50 pueden instalar paneles solares en una comunidad.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Conciencia y Cambio -->
+        <section id="conciencia">
+            <h2 class="section-title"><i class="bi bi-megaphone"></i> Trayendo Conciencia y Fomentando Cambio</h2>
+            
+            <div class="card">
+                <div class="card-body">
+                    <p class="lead">El cambio comienza con la conciencia. Aquí hay cómo puedes ayudar:</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="section-subtitle"><i class="bi bi-chat-dots"></i> Comunicación y Educación</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✅ Comparte información confiable en redes sociales</li>
+                                <li class="mb-2">✅ Participa en conversaciones sobre clima en tu comunidad</li>
+                                <li class="mb-2">✅ Educate a ti mismo y a otros sobre hechos climáticos</li>
+                                <li class="mb-2">✅ Resuelve mitos y desinformación climática</li>
+                                <li class="mb-2">✅ Documenta y comparte tu viaje sostenible</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="section-subtitle"><i class="bi bi-lightning-charge"></i> Acción Colectiva</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✅ Únete a grupos ambientalistas locales</li>
+                                <li class="mb-2">✅ Participa en eventos y manifestaciones climáticas</li>
+                                <li class="mb-2">✅ Presiona a políticos por políticas climáticas</li>
+                                <li class="mb-2">✅ Crea campañas comunitarias de conciencia</li>
+                                <li class="mb-2">✅ Colabora con instituciones educativas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="alert alert-success" role="alert">
+                        <i class="bi bi-star-fill"></i> <strong>Tu voz importa:</strong> Los movimientos sociales han cambiado políticas. Juntos podemos crear presión para que gobiernos y corporaciones tomen acción climática seria.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Llamada a la Acción -->
+        <section class="text-center my-5">
+            <div class="card" style="border: 3px solid var(--verde-oscuro);">
+                <div class="card-body" style="padding: 40px;">
+                    <h3 class="mb-3">🌍 El Momento es Ahora</h3>
+                    <p class="lead mb-4">No hay planeta B. La ciencia es clara. La solución es posible. <strong>¿Qué harás hoy?</strong></p>
+                    <a href="index.html" class="btn btn-verde btn-lg"><i class="bi bi-chat-dots"></i> Únete a Leafy en Discord</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0"><i class="bi bi-tree"></i> Leafy - Guía Completa sobre Cambio Climático</p>
+            <p class="small mt-2">Información confiable, recursos viables, soluciones reales | © 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

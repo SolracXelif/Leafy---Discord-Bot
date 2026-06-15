@@ -1,0 +1,11 @@
+#librerias necesarias para el proyecto:
+
+discord.py
+numpy
+Pillow
+pyttsx3
+requests
+tensorflow==2.15.1
+asyncio
+io
+os

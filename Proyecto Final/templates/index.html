@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafy - Tu Asistente del Clima y guía contra el cambio climático</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --verde-oscuro: #1B5E20;
+            --verde-claro: #A5D6A7;
+            --verde-muy-claro: #C8E6C9;
+            --verde-pastel: #E8F5E9;
+        }
+        
+        body {
+            background-color: var(--verde-pastel);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, #2E7D32 100%);
+            box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, #2E7D32 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .card {
+            border: none;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 25px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(27, 94, 32, 0.2);
+        }
+        
+        .card-header {
+            background-color: var(--verde-claro);
+            border: none;
+            border-radius: 15px 15px 0 0;
+            padding: 20px;
+        }
+        
+        .card-header h5 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-body p, .card-body li {
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .badge-verde {
+            background-color: var(--verde-claro);
+            color: var(--verde-oscuro);
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+        
+        .btn-verde {
+            background-color: var(--verde-oscuro);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .btn-verde:hover {
+            background-color: #2E7D32;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--verde-claro);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 15px;
+        }
+        
+        .referencias-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--verde-oscuro);
+        }
+        
+        .referencias-section a {
+            color: var(--verde-oscuro);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .referencias-section a:hover {
+            color: #2E7D32;
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: var(--verde-oscuro);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .librerias-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .libreria-badge {
+            background-color: var(--verde-muy-claro);
+            color: var(--verde-oscuro);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 2px solid var(--verde-claro);
+        }   
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-leaf"></i> Leafy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#funciones">Funciones</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#librerias">Tecnología</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#referencias">Referencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1><i class="bi bi-tree"></i> Bienvenido a Leafy</h1>
+            <p>Tu asistente personal para el clima y la lucha contra el cambio climático</p>
+            <p class="lead">Obtén información del clima en tiempo real, consejos ecológicos prácticos y noticias sobre el cambio climático, todo en una plataforma interactiva.</p>
+            <img src="/static/img/leafy.jpg" alt="Leafy" class="img-fluid rounded shadow mt-4" style="max-width: 260px;">
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <!-- Sección de Funciones -->
+        <section id="funciones">
+            <h2 class="section-title"><i class="bi bi-lightning-charge"></i> Funciones Principales</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="bi bi-cloud-sun"></i> Información del Clima</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Consulta el clima actual y los pronósticos detallados para tu ubicación. Accede a datos meteorológicos en tiempo real y prepárate para cualquier condición climática.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="bi bi-heart-fill"></i> Consejos Ecológicos</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Recibe consejos prácticos y accionables para reducir tu impacto ambiental. Aprende cómo contribuir a la protección del planeta desde tu día a día.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="bi bi-newspaper"></i> Noticias Climáticas</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Mantente informado con las últimas noticias relacionadas con el cambio climático. Conoce los avances científicos y políticas de acción climática global.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="section-title"><i class="bi bi-link-45deg"></i> Resumen General del Cambio Climático</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>¿Quieres profundizar más en el cambio climático? Visita nuestra página de recursos adicionales para acceder a:</p>
+                    <ul class="ms-3">
+                        <li>Enlaces a organizaciones ambientales y científicas</li>
+                        <li>Artículos y estudios sobre cambio climático</li>
+                        <li>Guías prácticas para vivir de manera más sostenible</li>
+                        <li>Resumen general del cambio climático, como es causado, data de tablas e información detallada del tiempo, como solucionarlo, fundaciones sin fines de lucro que apoyen al planeta y traer consciencia sobre la importancia de proteger el medio ambiente.</li>
+                    </ul>
+                    <a href="recursos.html" class="btn btn-verde mt-3"><i class="bi bi-box-arrow-up-right"></i> Ver Recursos</a>
+                </div>
+            </div>
+        </section>
+        <!-- Sección de Tecnología -->
+        <section id="librerias">
+            <h2 class="section-title"><i class="bi bi-code-square"></i> Tecnología Utilizada</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h5>Librerías de Python</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3"><strong>Leafy está construido con las siguientes librerías de Python:</strong></p>
+                    <div class="librerias-container">
+                        <span class="libreria-badge"><i class="bi bi-chat-dots"></i> discord</span>
+                        <span class="libreria-badge"><i class="bi bi-cloud-download"></i> requests</span>
+                        <span class="libreria-badge"><i class="bi bi-volume-up"></i> pyttsx3</span>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <h6 class="text-success fw-bold">Discord</h6>
+                            <p>Librería oficial para crear bots de Discord. Permite interactuar con la API de Discord y responder a eventos de servidor.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-success fw-bold">Requests</h6>
+                            <p>Cliente HTTP para Python. Se utiliza para consumir APIs de información meteorológica y datos climáticos.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-success fw-bold">Pyttsx3</h6>
+                            <p>Motor de síntesis de voz texto-a-voz. Proporciona información climática en formato de audio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Cómo Usar -->
+        <section>
+            <h2 class="section-title"><i class="bi bi-play-circle"></i> Cómo Usar Leafy</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h5 class="mb-3">Habla con Leafy!</h5>
+                            <p>Leafy es un bot de Discord con una personalidad única que utiliza emojis, imágenes y síntesis de voz para informarte sobre:</p>
+                            <ul class="ms-3">
+                                <li>Cambios climáticos y sus consecuencias</li>
+                                <li>Soluciones sostenibles y ecológicas</li>
+                                <li>Datos relacionados con el clima global</li>
+                                <li>Noticias del mundo sobre cambio climático</li>
+                            </ul>
+                            <p class="mt-3"><strong>Es una guía interactiva para la concienciación sobre el cambio climático en tu servidor de Discord.</strong></p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <a href="https://discord.com/channels/1419832096859492405/1419837817160204430" class="btn btn-verde btn-lg">
+                                <i class="bi bi-plus-circle"></i> Únete al servidor de Leafy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Referencias -->
+        <section id="referencias">
+            <h2 class="section-title"><i class="bi bi-book"></i> Referencias y Recursos</h2>
+            <div class="referencias-section">
+                <p class="mb-4"><strong>Recursos oficiales y científicos sobre cambio climático:</strong></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <h6><i class="bi bi-globe"></i> Organizaciones Internacionales</h6>
+                            <ul class="list-unstyled ms-3">
+                                <li><a href="https://www.un.org/es/climatechange" target="_blank">ONU - Acción por el Clima</a></li>
+                                <li><a href="https://wmo.int/es/climate" target="_blank">OMM - Organización Meteorológica Mundial</a></li>
+                                <li><a href="https://www.ipcc.ch/" target="_blank">IPCC - Panel Intergubernamental sobre Cambio Climático</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <h6><i class="bi bi-microscope"></i> Datos y Noticias Científicas</h6>
+                            <ul class="list-unstyled ms-3">
+                                <li><a href="https://www.nature.com/subjects/climate-change" target="_blank">Nature - Artículos sobre Cambio Climático</a></li>
+                                <li><a href="https://www.climate.gov/" target="_blank">Climate.gov - Datos y Recursos Educativos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Información del Proyecto -->
+        <section>
+            <h2 class="section-title"><i class="bi bi-info-circle"></i> Sobre Leafy</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Leafy</strong> es un bot de Discord con una personalidad única dedicado a la concientización sobre el cambio climático. Su objetivo es:</p>
+                    <ul class="ms-3">
+                        <li>Informar sobre el cambio climático y sus impactos globales</li>
+                        <li>Proporcionar datos científicos confiables y actualizados</li>
+                        <li>Ofrecer soluciones prácticas y accesibles para cada persona</li>
+                        <li>Crear una comunidad consciente del ambiente en Discord</li>
+                        <li>Inspirar acciones positivas para proteger nuestro planeta</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0"><i class="bi bi-tree"></i> Leafy - Tu Asistente del Clima y Guía Contra el Cambio Climático</p>
+            <p class="small mt-2">Construido con Discord.py, Requests y Pyttsx3 | © 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
